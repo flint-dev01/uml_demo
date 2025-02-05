@@ -23,7 +23,7 @@ const PageTest = () => {
     const handleUsecaseButtonClick = async () => {
         setLoading(true);
         try {
-            const response = await axios.post('http://127.0.0.1:8000/uml/generate-usecase', {
+            const response = await axios.post('https://www.uml-microservice.flint.software/uml/generate-usecase', {
                 "srs_text": srsText
             });
             setUmlImage(`data:image/png;base64,${response.data.use_case_diagram}`);
@@ -42,7 +42,7 @@ const PageTest = () => {
     const handleSequenceButtonClick = async () => {
         setLoading(true);
         try {
-            const response = await axios.post('http://127.0.0.1:8000/uml/generate-sequence', {
+            const response = await axios.post('https://www.uml-microservice.flint.software/uml/generate-sequence', {
                 "usecase_code": usecaseCode,
                 "use_cases": useCases,
                 "srs_text": srsText
@@ -63,7 +63,7 @@ const PageTest = () => {
     const handleActivityButtonClick = async () => {
         setLoading(true);
         try {
-            const response = await axios.post('http://127.0.0.1:8000/uml/generate-activity', {
+            const response = await axios.post('https://www.uml-microservice.flint.software/uml/generate-activity', {
                 "usecase_code": usecaseCode,
                 "actors": actors,
                 "srs_text": srsText
